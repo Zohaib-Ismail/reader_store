@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+
+    <!-- Link to Google Fonts (Inter Font) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <!-- Header (Top Menu Bar) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2>BookStore</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/genres">Genres</a></li>
+                    <li><a href="#">About</a></li>
+                    <li>
+                        <!-- Search form added here -->
+                        <form action="/search" method="GET" class="search-form">
+                            <input type="text" name="query" placeholder="Search books..." value="{{ request.args.get('query', '') }}" required>
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <!-- Featured Books Banner -->
+    <div class="banner">
+        <div class="banner-content">
+            {% for book in featured_books %}
+                <div class="banner-item" style="background-image: url('{{ book[5] }}');">
+                    <div class="banner-text">
+                        <h2>{{ book[1] }}</h2>
+                        <p>{{ book[3] }}</p>
+                        <a href="{{ url_for('book_details', book_id=book[0]) }}" class="btn-details">View Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <main>
+        <!-- Featured Grid -->
+        <div class="featured-grid-container">
+            <h2>Featured</h2>
+            <div class="grid-container">
+                <div class="grid">
+                    {% for genre, books in books_by_genre.items() %}
+                        {% for book in books %}
+                            <a href="{{ url_for('book_details', book_id=book[0]) }}" class="grid-item">
+                                <div class="cover" style="background-image: url('{{ book[5] }}');"></div>
+                            </a>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Genre Grids -->
+        {% for genre, books in books_by_genre.items() %}
+            <div class="genre-grid-container">
+                <h2>{{ genre }}</h2>
+                <div class="grid-container">
+                    <div class="grid">
+                        {% for book in books %}
+                            <a href="{{ url_for('book_details', book_id=book[0]) }}" class="grid-item">
+                                <div class="cover" style="background-image: url('{{ book[5] }}');"></div>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 diam Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for auto-scrolling effect -->
+    <script>
+        const bannerItems = document.querySelectorAll('.banner-item');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            bannerItems[currentIndex].style.transform = 'translateX(-100%)'; // Slide out the current item
+            currentIndex = (currentIndex + 1) % bannerItems.length; // Loop back to the first
+            bannerItems[currentIndex].style.transform = 'translateX(0%)'; // Bring in the next item
+        }, 4000); // Change banner every 4 seconds
+    </script>
+</body>
+</html>

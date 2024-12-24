@@ -1,0 +1,213 @@
+/* CSS For Book Details Page */
+body {
+    font-family: 'Inter Tight', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header (Top Menu Bar) Styling */
+header {
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo h2 {
+    margin: 0;
+    font-weight: 200;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d25edd; /* Change color on hover */
+}
+
+/* Main Content */
+.book-details-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.book-cover {
+    flex: 1 1 300px;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 25px 25px -10px rgba(0, 0, 0, 0.7); /* Softer, slightly dispersed shadow */
+}
+
+.book-cover img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0px;
+    border: 1px solid #ddd;
+}
+
+.book-info {
+    flex: 2 1 600px;
+    padding: 20px;
+}
+
+.book-info h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #333;
+}
+
+.book-info .author {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.book-info .description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Get Now Container */
+.get-now-container {
+    flex: 0 1 250px; /* Reduced width */
+    padding: 15px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    box-shadow: 0px 15px 15px -10px rgba(0, 0, 0, 0.7); /* Softer, slightly dispersed shadow */
+}
+
+.get-now-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300; /* Inter Light */
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.download-section {
+    margin-top: 20px;
+}
+
+.btn-download {
+    display: inline-block;
+    width: 82%;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #ff00cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-download:hover {
+    background-color: #c6009f;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.footer-container p {
+    margin: 0;
+}
+
+/* More Books Section */
+.more-books-container {
+    padding: 30px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.more-books-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid Styling */
+/* More Books Section */
+.more-books-container {
+    padding: 30px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.more-books-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid Styling */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    width: 150px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.grid-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item .cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+

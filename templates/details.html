@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - {{ book[1] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/details.css') }}">
+    <!-- Link to Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header (Top Menu Bar) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2>BookStore</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="/genres">Genres</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="book-details-container">
+            <!-- Left Column: Cover -->
+            <div class="book-cover">
+                <img src="/{{ book[5] }}" alt="{{ book[1] }} Cover">
+            </div>
+
+            <!-- Center Column: Book Details -->
+            <div class="book-info">
+                <h1>{{ book[1] }}</h1>
+                <p class="author">by <strong>{{ book[2] }}</strong></p>
+                <hr>
+                <h3>Synopsis</h3>
+                <p class="description">{{ book[3] }}</p>
+            </div>
+
+            <!-- Right Column: Get Now Container -->
+            <!-- Right Column: Get Now Container -->
+        <!-- Right Column: Get Now Container -->
+        <div class="get-now-container">
+            <p class="get-now-text">
+                <span style="font-weight: normal;">Unlock unlimited reading with diamBookStore!</span><br>
+                <br>
+                Access the latest eBooks and discover new worlds at your fingertips.<br><br>
+                Start reading today for free! Simply click the button below to download and enjoy.<br>
+                Never stop exploring with diamBookStore's handpicked selection of titles. We bring you the books you love, and the ones you’ll soon love.<br><br>
+                
+                Price: £0.00<br>
+            </p>
+            <div class="download-section">
+                <a href="/{{ book[4] }}" download class="btn-download">Download</a>
+            </div>
+        </div>
+
+</div>
+
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 diam Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

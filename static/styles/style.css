@@ -1,0 +1,307 @@
+/* Set global font to Inter */
+body {
+    font-family: 'Inter Tight', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Other CSS rules ... */
+
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+
+header h1 {
+    margin: 0;
+    font-weight: 500;
+}
+
+header h2 {
+    margin: 0;
+    font-weight: 200;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    max-width: 100%;    /* Set the max-width to ensure it doesn't exceed the parent width */
+    display: block;     /* Ensure container is block-level */
+    margin-top: 20px;   /* Spacing at the top of the grid */
+    padding-bottom: 10px;  /* Optionally add space for scroll appearance */
+}
+
+.grid {
+    display: flex;
+    gap: 20px;      /* Space between the cards */
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    justify-content: flex-start; /* Align the items to the left */
+    margin-top: 20px;
+}
+
+.grid-item {
+    width: 200px;     /* Standardize card size - adjust to your preference */
+    height: 300px;
+    flex-shrink: 0;    /* Prevent shrinking of the books */
+    text-decoration: none;
+}
+
+
+.cover {
+    background-position: center;
+    background-size: cover;
+    height: 150px; /* Smaller height for image */
+    width: 100%; /* Make the image fill the container horizontally */
+    max-width: 100%; /* Ensure image stays within the card's dimensions */
+    border: 1px solid #ddd; /* Light border */
+}
+
+/* The book info below the image in the grid */
+.book-info {
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd; /* Small divider between image and text */
+    text-align: center;
+}
+
+.book-info h3 {
+    margin: 10px 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.book-info p {
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* Global book details container */
+.book-details {
+    display: flex; /* Make the container use flexbox layout */
+    gap: 20px; /* Space between image and text */
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center; /* Center the content vertically */
+}
+
+/* Book cover styles (on details page) */
+.cover {
+    background-position: center;
+    background-size: cover;
+    width: 200px; /* Make the cover smaller, adjust as needed */
+    height: 300px; /* Set a fixed height for cover image */
+    border: 0px solid #ddd; /* Light border */
+    box-shadow: 0px 25px 25px -10px rgba(0, 0, 0, 0.7); /* Softer, slightly dispersed shadow */
+}
+
+/* Book info section (right side of the details page) */
+.book-info {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 0px; /* Optional: round the corners of the info box */
+}
+
+.book-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.book-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Download Button (on the details page) */
+.btn-download {
+    padding: 10px 20px;
+    background-color: #d25edd;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #da67ec;
+}
+
+/* Header (Top Menu Bar) Styling */
+header {
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d25edd; /* Change color on hover */
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Styling for genre buttons */
+.genres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.genre-button {
+    background-color: #d25edd;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width: 200px; /* You can adjust this based on your design */
+}
+
+.genre-button:hover {
+    background-color: #da67ec;
+}
+
+.genre-button:active {
+    background-color: #9e43d0; /* Darker color when clicked */
+}
+
+/* Banner styles */
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 400px; /* Adjust this to fit your design */
+}
+
+.banner-content {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    height: 100%;
+}
+
+.banner-item {
+    flex: 0 0 100%;  /* Makes sure each book takes up the full width */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px; /* Padding around the text */
+    border-radius: 5px;
+    width: auto; /* Allow the width to adjust according to the text */
+    max-width: 500px; /* Maximum width to prevent it from getting too large */
+    word-wrap: break-word; /* Allows long words to wrap within the box */
+}
+
+.banner-text h2 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.banner-text p {
+    font-size: 1rem;
+    margin: 15px 10;
+}
+
+.btn-details {
+    padding: 10px 20px;
+    background-color: #d25edd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-details:hover {
+    background-color: #da67ec;
+}
+
+footer {
+    background-color: #f4f4f4;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+
+footer p {
+    margin: 0;
+}
+

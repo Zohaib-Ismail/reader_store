@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <!-- Header (Top Menu Bar) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2>BookStore</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="/genres">Genres</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Genres</h2>
+        <div class="genres-container">
+            <!-- Render genres as buttons -->
+            {% for genre, books in genres.items() %}
+                <a href="{{ url_for('genre', genre_name=genre) }}" class="genre-button">{{ genre }}</a>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 diam Systems. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
